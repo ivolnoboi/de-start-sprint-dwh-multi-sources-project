@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS cdm.couriers_report (
+CREATE TABLE IF NOT EXISTS cdm.dm_courier_ledger (
 	id INTEGER GENERATED ALWAYS AS IDENTITY NOT NULL, -- идентификатор записи
 	courier_id VARCHAR NOT NULL, -- ID курьера
 	courier_name VARCHAR NOT NULL, -- Ф.И.О. курьера
