@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS cdm.couriers_report (
 	CONSTRAINT couriers_report_settlement_month_check CHECK ((settlement_month >= 1) AND (settlement_month <= 12)),
 	CONSTRAINT orders_count_greater_than_zero CHECK (orders_count >= 0),
 	CONSTRAINT orders_total_sum_greater_than_zero CHECK (orders_total_sum >= 0),
-	CONSTRAINT rate_avg_check CHECK ((rate_avg >= 0) AND (rate_avg <= 5)),
+	CONSTRAINT rate_avg_check CHECK ((rate_avg >= 1) AND (rate_avg <= 5)),
 	CONSTRAINT order_processing_fee_greater_than_zero CHECK (order_processing_fee >= 0),
 	CONSTRAINT courier_order_sum_greater_than_zero CHECK (courier_order_sum >= 0),
 	CONSTRAINT courier_tips_sum_greater_than_zero CHECK (courier_tips_sum >= 0),
