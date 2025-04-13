@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS dds.dm_deliveries (
 	CONSTRAINT dm_deliveries_rate_check CHECK ((rate >= 1) AND (rate <= 5)),
 	CONSTRAINT dm_deliveries_tip_sum_check CHECK (tip_sum >= 0),
 	CONSTRAINT dm_deliveries_fkey_couriers FOREIGN KEY (courier_id) REFERENCES dds.dm_couriers (id),
-	CONSTRAINT dm_deliveries_fkey_timestamps FOREIGN KEY (timestamp_id) REFERENCES dds.dm_timestamps (id)
+	CONSTRAINT dm_deliveries_fkey_timestamps FOREIGN KEY (timestamp_id) REFERENCES dds.dm_timestamps (id),
+	CONSTRAINT dm_deliveries_delivery_id_unique UNIQUE (delivery_id)
 );
 
 ALTER TABLE dds.dm_orders ADD COLUMN delivery_id INT;

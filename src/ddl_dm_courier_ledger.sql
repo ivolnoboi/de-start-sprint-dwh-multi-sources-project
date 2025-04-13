@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS cdm.dm_courier_ledger (
 	courier_tips_sum NUMERIC(14, 2) NOT NULL, -- сумма, которую пользователи оставили курьеру в качестве чаевых
 	courier_reward_sum NUMERIC(14, 2) NOT NULL, -- сумма, которую необходимо перечислить курьеру
 	CONSTRAINT couriers_report_pkey PRIMARY KEY (id),
-	CONSTRAINT couriers_report_courier_id_unique UNIQUE (courier_id),
+	CONSTRAINT couriers_report_courier_year_month_unique UNIQUE (courier_id, settlement_year, settlement_month),
 	CONSTRAINT couriers_report_settlement_year_check CHECK ((settlement_year >= 2022) AND (settlement_year < 2500)),
 	CONSTRAINT couriers_report_settlement_month_check CHECK ((settlement_month >= 1) AND (settlement_month <= 12)),
 	CONSTRAINT orders_count_greater_than_zero CHECK (orders_count >= 0),
